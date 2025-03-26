@@ -144,11 +144,11 @@ Both programs use POSIX shared memory (shm_open) with the name /shm_table to cre
 - Semaphores
     Three semaphores are used to manage synchronization
 
-        empty_sem: Initialized to the table capacity (2) so that the producer waits when the table is full.
+    **empty_sem**: Initialized to the table capacity (2) so that the producer waits when the table is full.
 
-        full_sem: Initialized to 0 so that the consumer waits when there are no items.
+    **full_sem**: Initialized to 0 so that the consumer waits when there are no items.
 
-        mutex_sem: A binary semaphore (initialized to 1) that ensures mutual exclusion when accessing the shared table.
+    **mutex_sem**: A binary semaphore (initialized to 1) that ensures mutual exclusion when accessing the shared table.
 
 - Threads
     Each program creates a dedicated thread:
