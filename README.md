@@ -115,7 +115,7 @@ Make sure to implement similar changes in your consumer code.
 While running, you may see output similar to the following:
 
 - **Producer Terminal**:
-
+```
 Producing item: 1
 Placed item 1 at index 0
 Producing item: 2
@@ -123,13 +123,15 @@ Placed item 2 at index 1
 Producing item: 3
 Placed item 3 at index 0
 ...
+```
 
 - **Consumer Terminal**:
-
+```
 Consumed item 1 from index 0
 Consumed item 2 from index 1
 Consumed item 3 from index 0
 ...
+```
 
 ## Code Overview
 Shared Memory
