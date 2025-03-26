@@ -51,7 +51,7 @@ Or, identify the process IDs using ps and terminate them with:
 kill <PID>
 ```
 
-Graceful Shutdown with Signal Handling:
+- **Graceful Shutdown with Signal Handling**:
 Enhance the code to catch termination signals (e.g., SIGINT or SIGTERM). When a signal is received, the program can exit the loop, perform cleanup (unmapping shared memory, closing semaphores), and then terminate gracefully.
 Below is a sample modification for the producer:
 
@@ -114,7 +114,7 @@ Make sure to implement similar changes in your consumer code.
 ## Example Output
 While running, you may see output similar to the following:
 
-Producer Terminal:
+-**Producer Terminal**:
 
 Producing item: 1
 Placed item 1 at index 0
@@ -124,7 +124,7 @@ Producing item: 3
 Placed item 3 at index 0
 ...
 
-Consumer Terminal:
+-**Consumer Terminal**:
 
 Consumed item 1 from index 0
 Consumed item 2 from index 1
