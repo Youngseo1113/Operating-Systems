@@ -23,6 +23,7 @@ Open your terminal in the repository directory and run the following commands:
 ```bash
 gcc producer.c -pthread -lrt -o producer
 gcc consumer.c -pthread -lrt -o consumer
+```
 
 ## Execution
 
@@ -30,6 +31,7 @@ Run the producer and consumer concurrently. For example, you can start them in t
 
 ```bash
 ./producer & ./consumer &
+```
 
 ## Termination
 
@@ -41,11 +43,13 @@ You can simply kill the processes from the shell. For instance:
 ```bash
 killall producer
 killall consumer
+```
 
 Or, identify the process IDs using ps and terminate them with:
 
 ```bash
 kill <PID>
+```
 
 Graceful Shutdown with Signal Handling:
 Enhance the code to catch termination signals (e.g., SIGINT or SIGTERM). When a signal is received, the program can exit the loop, perform cleanup (unmapping shared memory, closing semaphores), and then terminate gracefully.
@@ -103,6 +107,7 @@ int main() {
 
     return 0;
 }
+```
 
 Make sure to implement similar changes in your consumer code.
 
