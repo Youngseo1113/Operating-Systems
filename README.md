@@ -114,7 +114,7 @@ Make sure to implement similar changes in your consumer code.
 ## Example Output
 While running, you may see output similar to the following:
 
--**Producer Terminal**:
+- **Producer Terminal**:
 
 Producing item: 1
 Placed item 1 at index 0
@@ -124,7 +124,7 @@ Producing item: 3
 Placed item 3 at index 0
 ...
 
--**Consumer Terminal**:
+- **Consumer Terminal**:
 
 Consumed item 1 from index 0
 Consumed item 2 from index 1
@@ -140,19 +140,19 @@ Both programs use POSIX shared memory (shm_open) with the name /shm_table to cre
 - Two indices (in for insertion and out for removal).
 
 - Semaphores
-Three semaphores are used to manage synchronization:
+    Three semaphores are used to manage synchronization:
 
-empty_sem: Initialized to the table capacity (2) so that the producer waits when the table is full.
+    empty_sem: Initialized to the table capacity (2) so that the producer waits when the table is full.
 
-full_sem: Initialized to 0 so that the consumer waits when there are no items.
+    full_sem: Initialized to 0 so that the consumer waits when there are no items.
 
-mutex_sem: A binary semaphore (initialized to 1) that ensures mutual exclusion when accessing the shared table.
+    mutex_sem: A binary semaphore (initialized to 1) that ensures mutual exclusion when accessing the shared table.
 
 - Threads
-Each program creates a dedicated thread:
+    Each program creates a dedicated thread:
 
-The producer thread continuously produces items and places them into the shared table.
+    The producer thread continuously produces items and places them into the shared table.
 
-The consumer thread continuously retrieves items from the table.
+    The consumer thread continuously retrieves items from the table.
 
-The main thread in each program uses pthread_join to wait for the spawned thread.
+    The main thread in each program uses pthread_join to wait for the spawned thread.
